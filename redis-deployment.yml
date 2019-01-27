@@ -8,17 +8,17 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      name: redis-pod
+      name: redis-master
       app: demo-guestbook-app
   template:
     metadata:
-      name: redis-pod
+      name: redis-master
       labels:
-        name: redis-pod
+        name: redis-master
         app: demo-guestbook-app
     spec:
       containers:
-        - name: redis
+        - name: redis-master
           image: redis
           ports:
             - containerPort: 6379
